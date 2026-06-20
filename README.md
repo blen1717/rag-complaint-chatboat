@@ -8,17 +8,30 @@ The goal is to transform raw, unstructured customer complaints into a strategic 
 
 ---
 
-## 📁 Deliverables
+## 📦 Download Deliverables
+
+The complete deliverables (filtered dataset, FAISS index, metadata, and report) are available for download from Google Drive:
+
+🔗 [Download interim_deliverables.zip](https://drive.google.com/file/d/1rlR34UbcEJLlMLPQ77-V7PU4Pk6F1xHA/view?usp=drivesdk)
+
+This includes:
+- filtered_complaints.csv – cleaned, filtered, and stratified sample of ~15,000 complaints.
+- faiss_index.bin – FAISS vector index containing 384‑dim embeddings of all text chunks.
+- metadata.pkl – metadata linking each chunk to its complaint ID, product category, and position.
+- interim_report.md – detailed interim report covering EDA, preprocessing, sampling, chunking, embedding, and vector store creation.
+
+---
+
+## 📁 Repository Contents
 
 | File | Description |
 |------|-------------|
-| filtered_complaints.csv | Cleaned, filtered, and stratified sample of ~15,000 complaints from the CFPB dataset. |
-| faiss_index.bin | FAISS vector index containing 384‑dim embeddings of all text chunks. |
-| metadata.pkl | Metadata linking each chunk to its complaint ID, product category, and position. |
-| interim_report.pdf (or .md) | Detailed interim report covering EDA, preprocessing, sampling, chunking, embedding, and vector store creation. |
+| README.md | This file – project overview and instructions. |
+| requirements.txt | Python dependencies for reproducing the environment. |
+| .gitignore | Files and folders ignored by Git. |
 | interim_submission.ipynb | Complete Google Colab notebook with all code for Tasks 1 and 2. |
 
-> Note: filtered_complaints.csv is compressed as .gz if the raw CSV exceeds GitHub's file size limit.
+> Note: The large deliverables are hosted on Google Drive due to GitHub's 100 MB file size limit.
 
 ---
 
