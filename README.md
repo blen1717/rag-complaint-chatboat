@@ -4,23 +4,82 @@
 
 This repository contains the interim deliverables for the 10 Academy Week 7 Challenge – building a RAG‑powered chatbot for CreditTrust Financial.
 
-### Deliverables
-- **filtered_complaints.csv** – cleaned, filtered, and stratified sample of ~15,000 complaints.
-- **faiss_index.bin** – FAISS vector index of chunk embeddings.
-- **metadata.pkl** – chunk metadata (complaint ID, product, text).
-- **interim_report.pdf** (or .md) – EDA findings, sampling, chunking, and embedColab notebookColab notebook** – complete code for Tasks 1 and 2.
+The goal is to transform raw, unstructured customer complaints into a strategic asset, enabling product managers, support teams, and compliance officers to ask plain‑English questions and receive evidence‑based answers in seconds.
 
-### How to Reproduce
-1. Download the CFPB complaint dataset (or use the provided ZIP).
-2. Run the notebook in Google Colab (with GPU enabled).
-3. The notebook will:
-   - Read the 5 GB CSV in chunks,
-   - Filter to the four target products,
-   - Perform stratified sampling,
-   - Clean text,
-   - Chunk into 500‑character pieces (50 overlap),
-   - Generate embeddings with all-MiniLM-L6-v2,
-   - Build a FAISS index,
-   - Save the final outputs.
+---
 
-### File Structure
+## 📁 Deliverables
+
+| File | Description |
+|------|-------------|
+| filtered_complaints.csv | Cleaned, filtered, and stratified sample of ~15,000 complaints from the CFPB dataset. |
+| faiss_index.bin | FAISS vector index containing 384‑dim embeddings of all text chunks. |
+| metadata.pkl | Metadata linking each chunk to its complaint ID, product category, and position. |
+| interim_report.pdf (or .md) | Detailed interim report covering EDA, preprocessing, sampling, chunking, embedding, and vector store creation. |
+| interim_submission.ipynb | Complete Google Colab notebook with all code for Tasks 1 and 2. |
+
+> Note: filtered_complaints.csv is compressed as .gz if the raw CSV exceeds GitHub's file size limit.
+
+---
+
+## 🧪 How to Reproduce
+
+1. Download the CFPB complaint dataset from the official source or use the provided ZIP link.
+2. Open the notebook in Google Colab (enable GPU for faster embeddings).
+3. Run all cells in order. The notebook will:
+   - Read the 5 GB CSV in chunks (10,000 rows per chunk) to avoid memory issues.
+   - Filter to the four target products: Credit Card, Personal Loan, Savings Account, Money Transfer.
+   - Remove empty narratives and clean text (lowercasing, boilerplate removal, special character stripping).
+   - Perform stratified sampling by product category to obtain a balanced sample of ~15,000 complaints.
+   - Split each complaint into 500‑character chunks with a 50‑character overlap.
+   - Generate embeddings using sentence-transformers/all-MiniLM-L6-v2.
+   - Build a FAISS index and save the vector store (faiss_index.bin) and metadata (metadata.pkl).
+   - Save the final filtered dataset as filtered_complaints.csv.
+
+---
+
+## 🛠️ Technologies Used
+
+| Tool | Purpose |
+|------|---------|
+| Python 3.9+ | Core programming language |
+| Pandas, NumPy | Data manipulation and analysis |
+| Matplotlib, Seaborn | EDA visualisations |
+| LangChain | RecursiveCharacterTextSplitter for chunking |
+| Sentence‑Transformers | all-MiniLM-L6-v2 embedding model |
+| FAISS (CPU) | Vector index for semantic search |
+| Google Colab | Cloud environment with GPU support |
+
+---
+
+## 📊 Key EDA Insights
+
+- Product distribution: Credit Cards dominate the complaint volume, followed by Personal Loans and Money Transfers.
+- Narrative length: Most complaints are short (median ~300 characters), but a long tail exists – justifying the chunking strategy.
+- Data quality: After filtering and cleaning, ~15,000 complaints were retained with no missing values.
+
+---
+
+## 🔜 Next Steps (Final Submission – Tasks 3 & 4)
+
+- Build the retriever – semantic search over FAISS.
+- Implement the generator – LLM‑based answer synthesis (using Hugging Face or OpenAI).
+- Design a prompt template (RISE framework) with guardrails to prevent hallucination.
+- Build an interactive UI using Gradio or Streamlit.
+- Evaluate the system with test questions (qualitative scoring).
+
+---
+
+## 👤 Author
+
+Blen Assefa – 10 Academy Cohort  
+
+---
+
+## 📬 Contact
+
+For any issues, please open a GitHub issue or reach out via Slack (channel: #all-week7).
+
+---
+
+*End of README*
