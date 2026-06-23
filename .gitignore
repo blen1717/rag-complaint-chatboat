@@ -1,30 +1,24 @@
-# Byte-compiled / optimized / DLL files
+# Byte-compiled
 pycache/
-*.py[cod]
-*.so
+*.pyc
 
 # Virtual environments
 venv/
 env/
 .venv/
 
-# Jupyter Notebook checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Data files (large)
-*.csv
-*.zip
-*.parquet
+# Large data files (keep only .gitkeep)
 *.bin
 *.pkl
-!filtered_complaints.csv
-!faiss_index.bin
-!metadata.pkl
+*.csv
+*.parquet
+!data/vector_store/.gitkeep
 
-# Colab temporary files
-sample_data/
-drive/
-content/
+# Environment variables
+.env
 
 # OS metadata
 .DS_Store
@@ -34,6 +28,3 @@ Thumbs.db
 .vscode/
 .idea/
 
-# DVC (if you use it later)
-.dvc/
-.dvcignore
