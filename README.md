@@ -10,7 +10,7 @@ This is a Retrieval-Augmented Generation (RAG) chatbot that answers questions ab
 
 The FAISS index and metadata are too large for GitHub. Download them here:
 
-- [full_faiss_index.bin](https://drive.google.com/https://drive.google.com/file/d/1q3QU275321LS_4iMMP-bywyHq_eT96hi/view?usp=drivesdk)
+- [full_faiss_index.bin](https://drive.google.com/https://https://drive.google.com/file/d/1q3QU275321LS_4iMMP-bywyHq_eT96hi/view?usp=drivesdk)
 - [full_metadata.pkl](https://drive.google.com/https://drive.google.com/file/d/1aNleO0E6681zhq1h7UA2-uU_loE9HnyL/view?usp=drivesdk)
 
 Place them in data/vector_store/
