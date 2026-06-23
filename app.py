@@ -1,6 +1,6 @@
 
 import gradio as gr
-from rag_pipeline import rag_pipeline  # adapt if needed
+from src.rag_pipeline import RAGPipeline
 
 def respond(message, history):
     result = rag_pipeline(message)
