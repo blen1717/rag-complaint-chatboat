@@ -51,10 +51,10 @@ rag-complaint-chatbot/
 
 📊 Evaluation Summary
 
-Metric Result
-Average Answer Score 4.2 / 5
-Fallback Guardrail ✅ Works perfectly
-Retrieval Quality Good, can improve with reranking
+Metric                               Result
+Average Answer Score                 4.2 / 5
+Fallback Guardrail                   ✅ Works perfectly
+Retrieval Quality                    Good, can improve with reranking
 
 See final_report.pdf for full evaluation table.
 
