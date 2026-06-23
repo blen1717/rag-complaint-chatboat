@@ -17,23 +17,6 @@ Place them in data/vector_store/
 
 ---
 
-## 📁 Project Structure
-
-
-rag-complaint-chatbot/
-├── data/vector_store/      # Large files (link only)
-├── notebooks/              # Colab notebook
-├── src/                    # Python modules
-├── tests/                  # Unit tests
-├── app.py                  # Gradio UI
-├── requirements.txt
-├── .gitignore
-├── README.md
-├── final_report.pdf
-└── ui_screenshot.png
-
----
-
 ## 🚀 How to Run
 
 1. Install dependencies:
@@ -49,12 +32,11 @@ rag-complaint-chatbot/
    
 ---
 
-📊 Evaluation Summary
-
-Metric                               Result
-Average Answer Score                 4.2 / 5
-Fallback Guardrail                   ✅ Works perfectly
-Retrieval Quality                    Good, can improve with reranking
+| Metric | Result |
+|--------|--------|
+| Average Answer Score | 4.2 / 5 |
+| Fallback Guardrail | ✅ Works perfectly |
+| Retrieval Quality | Good, can improve with reranking |
 
 See final_report.pdf for full evaluation table.
 
